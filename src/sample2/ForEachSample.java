@@ -13,27 +13,26 @@ public class ForEachSample {
     List<Long> firstTen = Stream.iterate(1L, n -> n + 1).limit(10).collect(Collectors.toList());
 
     //1 Primera forma de imprimir los numeros: a la antiguita creando clase anonima
-		Consumer<Long> c = new Consumer<Long>() {
-			
-			@Override
-			public void accept(Long o) {
-				System.out.println(o);
-			}
-
-		};
+    Consumer<Long> c = new Consumer<Long>() {
 		
-		firstTen.forEach(c);
+		@Override
+		public void accept(Long o) {
+			System.out.println(o);
+		}
+	
+    };
 		
-		//2 Segunda forma de imprimir los numeros: usando una funcion lambda
+    firstTen.forEach(c);
+	
+    //2 Segunda forma de imprimir los numeros: usando una funcion lambda
     Consumer<Long> cLambda = n -> System.out.println(n);
 		
-		firstTen.forEach(cLambda);
+    firstTen.forEach(cLambda);
 
     //3 Tercera forma de imprimir los numeros: usando referencia a método
-		firstTen.forEach(System.out::println);
+		firstTen.forEach(System.out::println);		
 		
-		
-		Function<String, Integer> convertNumber = n -> Integer.parseInt(n);
+    Function<String, Integer> convertNumber = n -> Integer.parseInt(n);
 
     // Aplicar la función
     Integer num = convertNumber .apply("123");
