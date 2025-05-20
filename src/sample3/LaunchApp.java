@@ -3,13 +3,13 @@ package sample3;
 import java.util.HashMap;
 
 import sample3.service.SendMailService;
-import sample3.service.impl.SendMailServiceFunctionInterfaceImpl;
+import sample3.service.impl.SendMailServiceMyInterfaceImpl;
 
 public class LaunchApp {
 	
 	public static void main(String[] args) {
 		
-		SendMailService mailService = new SendMailServiceFunctionInterfaceImpl();
+		SendMailService mailService = new SendMailServiceMyInterfaceImpl();
 		
 		var contextDataWinner = new HashMap<String, String>();
 		contextDataWinner.put("userName", "Jorge G");
